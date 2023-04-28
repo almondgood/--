@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body bgcolor=yellow>
+    <h2 align=center>웹기반 센서제어</h2>
+    <p>
+    <table align=center border=0 width=600 cellspacing=5>
+        <tr>
+            <td align=right> LED 제어 </td>
+            <td align=center>
+                ON(<a href="led/red/on">빨강</a>
+                <a href="led/green/on">초록</a>
+                <a href="led/blue/on">파랑</a>)
+            </td>
+            <td> 
+                OFF(<a href="led/red/off">빨강</a>
+                <a href="led/green/off">초록</a>
+                <a href="led/blue/off">파랑</a>)
+            </td>
+            <td>
+                <font color=<%=redcolor%>>●</font>
+                <font color=<%=greencolor%>>●</font>
+                <font color=<%=bluecolor%>>●</font>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Buzzer 제어</td>
+            <td align=center> <a href="buzzer/on">ON</a></td>
+            <td> <a href="buzzer/off">OFF</a></td>
+            <td>
+                <font color=<%=buzzercolor%>>●</font>
+            </td>
+        </tr>
+    </table>
+    </p>
+    <hr>
+    <h2 align=center>온습도 측정</h2>
+    <div align=center>
+        <a href="humitemp">1회측정</a>
+    </div>
+    <hr>
+    <h2 align=center>LCD 디스플레이 모듈</h2>
+    <div align=center>
+        <form action="lcd/display" method="post">
+            <input type="text" name="line1" maxlength="16">
+            <input type="text" name="line2" maxlength="16">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</body>
+
+</html>

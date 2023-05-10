@@ -15,6 +15,7 @@ var redstate = '#b0b0b0'; // OFF 상태색 회색
 var bluestate = '#b0b0b0'; // OFF 상태색 회색
 var greenstate = '#b0b0b0'; // OFF 상태색 회색
 var buzzerstate = '#b0b0b0'; // OFF 상태색 회색
+var humitempData = null;
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -28,7 +29,8 @@ const mainPage = (req, res) => {
                 redcolor: redstate,
                 bluecolor: bluestate,
                 greencolor: greenstate,
-                buzzercolor: buzzerstate
+                buzzercolor: buzzerstate,
+                humitemp: humitempData
             }));
     });
 };
@@ -83,8 +85,8 @@ const buzzerOff = (req, res) => {
 
 const readHumitemp = (req, res) => {
     console.log('readHumitemp()');
-    humitemp.read();
-    humitempstate = "#ffffff";
+    humitemp.read().then(ht => humitempData = ht);
+    
     res.redirect('/');
 }
 

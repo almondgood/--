@@ -2,6 +2,10 @@
 <html>
 <head>
 </head>
+<script>
+    var temp = '-';
+    var humi = '-';
+</script>
 <body bgcolor=yellow>
     <h2 align=center>웹기반 센서제어</h2>
     <p>
@@ -38,6 +42,11 @@
     <h2 align=center>온습도 측정</h2>
     <div align=center>
         <a href="humitemp">1회측정</a>
+        <%= if (humitemp !== null && typeof humitemp === 'object') { %>
+            <%= temp=humitemp[0] %>
+            <%= humi=humitemp[1] %>
+        <%= } %>
+        ( <%= temp %>C  <%= humi %>% )
     </div>
     <hr>
     <h2 align=center>LCD 디스플레이 모듈</h2>
